@@ -5,6 +5,7 @@
 <meta property="og:title"         content="Calcula tu huella de carbono" />
 <meta property="og:description"   content="Ánimate y calcula tu huella de carbono" />
 <meta property="og:image"         content="https://raw.githubusercontent.com/MakaiaCO/huellacarbon2/branch-3/logo.png" />
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <style type="text/css">
     
 @font-face {
@@ -230,6 +231,12 @@ h2 {
   font-weight:900;
   font-size:3rem;
 }
+.fab{
+  color: white;
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none!important;
+}
   </style>
   <title>Calcula tu huella de carbono - Tigo</title>
 </head>
@@ -239,13 +246,12 @@ h2 {
     <img src="logo.png" width="200px">
     <div class="form">
   <h2>¡Calcula Tu huella de carbono!<h2>
-    <p>¿Cuantas horas pasas viendo series por streaming a la semana?</p><br>
+    <p>¿Cuántas horas pasas viendo series por streaming a la semana?</p><br>
 <input type="number" id="entrada" min="0" required placeholder="Número de horas ">
-    <button id="login-button" onclick="calcular()"> Calcular</button><br />
+    <button id="login-button" onclick="calcular()"><strong>Calcular</strong></button><br />
     <p><span id="output"></span><br>
-    <a href="https://twitter.com/intent/tweet?text=Ya%20conozco%20mi%20huella%20de%20carbono%20¡hazlo%20tu%20también!&url=https%3A%2F%2Fmakaiaco.github.io%2Fhuellacarbon&hashtags=tigo,voluntariado,huellacarbono" target="_blank">Twittear</a>
-    <br />
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://makaiaco.github.io/huellacarbono">Compartir en Facebook</a>
+    <a href="https://twitter.com/intent/tweet?text=Ya%20conozco%20mi%20huella%20de%20carbono%20¡hazlo%20tu%20también!&url=https%3A%2F%2Fmakaiaco.github.io%2Fhuellacarbono&hashtags=tigo,voluntariado,huellacarbono" target="_blank" alt="Compartir en Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://makaiaco.github.io/huellacarbono" alt="Compartir en Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
     </p>
     </div>
     </div>
@@ -268,7 +274,7 @@ function calcular() {
   var entrada = document.getElementById("entrada").value;
   var calcular = (55 * Number(entrada));
   var huella = calcular * 52;
-  document.getElementById("output").innerHTML = "La cantidad de CO2 que emites al  año es de " + "<div id='cifra'>" + huella + "</div>" + " Gramos al año...<br />¡Uy que montón!, nah no te creas... "
+  document.getElementById("output").innerHTML = "La cantidad de CO2 que emites al  año es de " + "<div id='cifra'>" + huella + "</div>" + " Gramos de CO2 al año...<br />¡Uy que montón!, nah no te creas... "
 ;}
 </script>
 </body>
