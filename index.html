@@ -38,40 +38,24 @@ body ::-webkit-input-placeholder {
   color: white;
   font-weight: 300;
 }
-body :-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
-  font-family: 'Source Sans Pro', sans-serif;
-  color: white;
-  opacity: 1;
-  font-weight: 300;
-}
-body ::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
-  font-family: 'Source Sans Pro', sans-serif;
-  color: white;
-  opacity: 1;
-  font-weight: 300;
-}
-body :-ms-input-placeholder {
-  /* Internet Explorer 10+ */
-  font-family: 'Source Sans Pro', sans-serif;
-  color: white;
-  font-weight: 300;
-}
+
 .wrapper {
   background: #50a3a2;
   background: linear-gradient(to bottom right, #00000A 0%, #00377D 100%);
-  overflow: hidden;
-  height: 600px;
+  overflow-x: hidden;
+  background: cover;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  width: 100%;
 }
 .wrapper.form-success .container h1 {
   transform: translateY(85px);
 }
 .container {
-  max-width: 600px;
+  max-width: 70%;
   margin: 0 auto;
   padding: 80px 0;
-  height: 400px;
   text-align: center;
 }
 .container h1 {
@@ -92,9 +76,9 @@ body :-ms-input-placeholder {
   outline: 0;
   border: 1px solid rgba(255, 255, 255, 0.4);
   background-color: rgba(255, 255, 255, 0.2);
-  width: 250px;
+  width: 100%;
   border-radius: 3px;
-  padding: 10px 15px;
+  padding: 20px 20px;
   margin: 0 auto 10px auto;
   display: block;
   text-align: center;
@@ -106,11 +90,6 @@ body :-ms-input-placeholder {
 .form input:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
-.form input:focus {
-  background-color: white;
-  width: 300px;
-  color: #00377D;
-}
 .form button {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -118,10 +97,10 @@ body :-ms-input-placeholder {
   outline: 0;
   background-color: #FFBE00;
   border: 0;
-  padding: 10px 15px;
+  padding: 20px 20px;
   color: #00377D;
   border-radius: 3px;
-  width: 250px;
+  width: 100%;
   cursor: pointer;
   font-size: 18px;
   transition-duration: 0.25s;
@@ -257,15 +236,16 @@ h2 {
 <body>
 <div class="wrapper">
   <div class="container">
+    <img src="logo.png" width="200px">
     <div class="form">
   <h2>¡Calcula Tu huella de carbono!<h2>
-    <p>¿Cuantas horas pasas viendo series por streaming a la semana?</p>
+    <p>¿Cuantas horas pasas viendo series por streaming a la semana?</p><br>
 <input type="number" id="entrada" min="0" required placeholder="Número de horas ">
     <button id="login-button" onclick="calcular()"> Calcular</button><br />
-    <p><span id="output"></span>
-           <a href="https://twitter.com/intent/tweet?text=Ya%20conozco%20mi%20huella%20de%20carbono%20¡hazlo%20tu%20también!&url=https%3A%2F%2Fmakaiaco.github.io%2Fhuellacarbon&hashtags=tigo,voluntariado,huellacarbono" target="_blank">Twittear</a>
-        <br />
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://makaiaco.github.io/huellacarbono">Compartir en Facebook</a>
+    <p><span id="output"></span><br>
+    <a href="https://twitter.com/intent/tweet?text=Ya%20conozco%20mi%20huella%20de%20carbono%20¡hazlo%20tu%20también!&url=https%3A%2F%2Fmakaiaco.github.io%2Fhuellacarbon&hashtags=tigo,voluntariado,huellacarbono" target="_blank">Twittear</a>
+    <br />
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://makaiaco.github.io/huellacarbono">Compartir en Facebook</a>
     </p>
     </div>
     </div>
