@@ -24,15 +24,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-weight: 300;
 }
 body {
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
   font-weight: 300;
-  height:100%; /* force the BODY element to match the height of the HTML element */
-
 }
+
 body ::-webkit-input-placeholder {
   /* WebKit browsers */
   font-family: 'Source Sans Pro', sans-serif;
@@ -54,9 +52,9 @@ body ::-webkit-input-placeholder {
   transform: translateY(85px);
 }
 .container {
-  max-width: 70%;
+  max-width: 80%;
   margin: 0 auto;
-  padding: 80px 0;
+  padding: 50px;
   text-align: center;
 }
 .container h1 {
@@ -66,7 +64,6 @@ body ::-webkit-input-placeholder {
   font-weight: 200;
 }
 .form {
-  padding: 20px 0;
   position: relative;
   z-index: 2;
 }
@@ -218,24 +215,39 @@ body ::-webkit-input-placeholder {
 #output {
   color:#FFBE00;
   font-weight:900;
-  font-size:2rem;
+  font-size:1.5em;
 }
 
 h2 {
-  font-size:2rem;
+  font-size:1.5em;
   font-weight:900;
+}
+#titulo {
+  color: #FFBE00;
+  font-weight: 900;
+  font-size: 2em;
 }
 
 #cifra {
   color:white;
   font-weight:900;
-  font-size:3rem;
+  font-size:3em;
 }
 .fab{
   color: white;
   display: inline-block;
   margin: 10px;
   text-decoration: none!important;
+  font-size: 2em;
+}
+.fab:hover {
+  color:#FFBE00 ;
+}
+#share {
+  color: white;
+}
+#entrada {
+  margin-bottom: 10px;
 }
   </style>
   <title>Calcula tu huella de carbono - Tigo</title>
@@ -243,12 +255,12 @@ h2 {
 <body>
 <div class="wrapper">
   <div class="container">
-    <img src="logo.png" width="200px">
+    <img src="logo.png"><br><br>
     <div class="form">
-  <h2>¡Calcula Tu huella de carbono!<h2>
+  <h2 id="titulo">¡Calcula tu huella de carbono!<h2><br>
     <p>¿Cuántas horas pasas viendo series por streaming a la semana?</p><br>
 <input type="number" id="entrada" min="0" required placeholder="Número de horas ">
-    <button id="login-button" onclick="calcular()"><strong>Calcular</strong></button><br />
+    <button id="login-button" onclick="calcular()"><strong>Calcular</strong></button><br><br>
     <p><span id="output"></span><br>
     <a href="https://twitter.com/intent/tweet?text=Ya%20conozco%20mi%20huella%20de%20carbono%20¡hazlo%20tu%20también!&url=https%3A%2F%2Fmakaiaco.github.io%2Fhuellacarbono&hashtags=tigo,voluntariado,huellacarbono" target="_blank" alt="Compartir en Twitter"><i class="fab fa-twitter"></i></a>
     <a href="https://www.facebook.com/sharer/sharer.php?u=https://makaiaco.github.io/huellacarbono" alt="Compartir en Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -274,17 +286,8 @@ function calcular() {
   var entrada = document.getElementById("entrada").value;
   var calcular = (55 * Number(entrada));
   var huella = calcular * 52;
-  document.getElementById("output").innerHTML = "La cantidad de CO2 que emites al  año es de " + "<div id='cifra'>" + huella + "</div>" + " Gramos de CO2 al año...<br />¡Uy que montón!, nah no te creas... "
+  document.getElementById("output").innerHTML = "La cantidad de CO2 que emites al  año es de " + "<div id='cifra'>" + huella + "</div>" + " Gramos de CO2 al año...<br />¡Uy que montón!, nah no te creas... <br><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>"
 ;}
-</script>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-39QH9BWCVY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-39QH9BWCVY');
 </script>
 </body>
 </html>
