@@ -253,6 +253,9 @@ h2 {
 .uy {
   font-size: 1.6em;
 }
+.fas {
+  color: white;
+}
   </style>
   <title>Calcula tu huella de carbono - Tigo</title>
 </head>
@@ -315,7 +318,7 @@ console.log(randomNumbers.length)
 var x = 0;
 var interval = setInterval(function () {
   
-   number.innerHTML = "La cantidad de CO2 que emites al  año es de " + "<div id='cifra'>" + randomNumbers.shift() + "</div>" + " Gramos<br /><div class='uy'>¡Uy que montón!</div><br><p>Para compensar tu huella, te invitamos a sembrar un arbol mínimo al año.</p><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>";
+   number.innerHTML = "La cantidad de CO2 que emites al  año es de " + "<div id='cifra'>" + randomNumbers.shift() + "</div>" + " Gramos<br /><div class='uy'>¡Uy que montón!</div><br><p>Para compensar tu huella, te invitamos a sembrar un arbol mínimo al año.</p><i class='fas fa-tree'></i><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>";
 
    if (++x === ticks) {
       window.clearInterval(interval);
