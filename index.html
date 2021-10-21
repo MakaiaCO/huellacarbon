@@ -214,6 +214,7 @@ body ::-webkit-input-placeholder {
 }
 #output {
   color:#FFBE00;
+  transition: all 2s ease-out;
   font-weight:900;
   font-size:1.5em;
 }
@@ -288,8 +289,38 @@ function calcular() {
   var entrada = document.getElementById("entrada").value;
   var calcular = (55 * Number(entrada));
   var huella = calcular * 52;
-  document.getElementById("output").innerHTML = "La cantidad de CO2 que emites al  año es de " + "<div id='cifra'>" + huella + "</div>" + " Gramos de CO2 al año...<br />¡Uy que montón!, nah no te creas... <br><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>"
-;}
+
+
+var number = document.getElementById('output');
+var start = 0;
+var end = huella;
+var ticks = 100;
+var speed = 100;
+
+var randomNumbers = [end]
+
+for (var i = 0; i < ticks - 1; i++) {
+  randomNumbers.unshift(
+    Math.floor(Math.random() * (end - start + 1) + start)
+  );
+}
+
+randomNumbers.sort((a, b) => {return a - b});
+
+console.log(randomNumbers.length)
+
+var x = 0;
+var interval = setInterval(function () {
+  
+   number.innerHTML = "La cantidad de CO2 que emites al  año es de " + "<div id='cifra'>" + randomNumbers.shift() + "</div>" + " Gramos de CO2 al año...<br />¡Uy que montón!, nah no te creas... <br><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>";
+
+   if (++x === ticks) {
+      window.clearInterval(interval);
+   }
+
+}, speed);
+}
+
 </script>
 </body>
 </html>
