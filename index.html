@@ -269,6 +269,8 @@ h2 {
 <input type="number" id="entrada" min="0" required placeholder="Número de horas ">
     <button onclick="calcular()"><strong>Calcular</strong></button><br><br>
     <p><span id="output"></span><br>
+    <p><span id="output2"></span><br>
+    <p><span id="output3"></span><br>
     <a href="https://twitter.com/intent/tweet?text=Ya%20conozco%20mi%20huella%20de%20carbono%20¡hazlo%20tu%20también!&url=https%3A%2F%2Fmakaiaco.github.io%2Fhuellacarbono&hashtags=tigo,voluntariado,huellacarbono" target="_blank" alt="Compartir en Twitter"><i class="fab fa-twitter"></i></a>
     <a href="https://www.facebook.com/sharer/sharer.php?u=https://makaiaco.github.io/huellacarbono" alt="Compartir en Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
     <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://makaiaco.github.io/huellacarbono" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -298,6 +300,8 @@ function calcular() {
 
 
 var number = document.getElementById('output');
+var number2 = document.getElementById('output2');
+var number2 = document.getElementById('output3');
 var start = 0;
 var end = huella;
 var ticks = 100;
@@ -317,8 +321,15 @@ console.log(randomNumbers.length)
 
 var x = 0;
 var interval = setInterval(function () {
-  
-   number.innerHTML = "La cantidad de CO2 que emites al  año es de " + "<div id='cifra'>" + randomNumbers.shift() + "</div>" + " Gramos<br /><div class='uy'>¡Uy que montón!</div><br><p>Para compensar tu huella, te invitamos a sembrar un arbol mínimo al año.</p><i class='fas fa-tree-alt'></i><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>";
+
+
+
+   number.innerHTML = "La cantidad de CO2 que emites al  año es de " + "<div id='cifra'>" + randomNumbers.shift() + "</div>" + " Gramos<br /><div class='uy'>¡Uy que montón!</div>";
+   if (huella <= 24000) {
+   number2.innerHTML = "<p>Para compensar tu huella, te invitamos a sembrar mínimo <h2>1</h2> árbol al año.</p><i class='fas fa-tree-alt'></i><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>" }
+   else {
+     number2.innerHTML = "<p>Para compensar tu huella, te invitamos a sembrar mínimo <h2>2</h2> árboles mínimo al año.</p><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>" 
+   }
 
    if (++x === ticks) {
       window.clearInterval(interval);
