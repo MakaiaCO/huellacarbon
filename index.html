@@ -255,6 +255,8 @@ h2 {
 }
 .fas {
   color: white;
+  display: inline-block;
+  margin: 10px;
 }
   </style>
   <title>Calcula tu huella de carbono - Tigo</title>
@@ -321,17 +323,33 @@ console.log(randomNumbers.length)
 
 var x = 0;
 var interval = setInterval(function () {
-
-
-
    number.innerHTML = "La cantidad de CO2 que emites al  año es de " + "<div id='cifra'>" + randomNumbers.shift() + "</div>" + " Gramos<br /><div class='uy'>¡Uy que montón!</div>";
+   if (huella > 0 && huella <=144000){
+
    if (huella <= 24000) {
-   number2.innerHTML = "<p>Para compensar tu huella, te invitamos a sembrar mínimo <h2>1</h2> árbol al año.</p><i class='fas fa-tree-alt'></i><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>" }
-   else {
-     number2.innerHTML = "<p>Para compensar tu huella, te invitamos a sembrar mínimo <h2>2</h2> árboles mínimo al año.</p><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>" 
+   number2.innerHTML = "<p>Para compensar tu huella, te invitamos a sembrar mínimo <h2>1</h2> árbol al año.</p><i class='fas fa-tree-alt'></i><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>"
+ }
+   else if (huella <= 48000) {
+     number2.innerHTML = "<p>Para compensar tu huella, te invitamos a sembrar mínimo <h2>2</h2> árboles al año.</p><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>" 
+   }
+    else if (huella <= 72000) {
+     number2.innerHTML = "<p>Para compensar tu huella, te invitamos a sembrar mínimo <h2>3</h2> árboles al año.</p><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>" 
+   }
+   else if (huella <= 96000) {
+     number2.innerHTML = "<p>Para compensar tu huella, te invitamos a sembrar mínimo <h2>4</h2> árboles al año.</p><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>" 
+   }
+  else if (huella <= 120000) {
+     number2.innerHTML = "<p>Para compensar tu huella, te invitamos a sembrar mínimo <h2>5</h2> árboles al año.</p><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>" 
+   }
+  else if (huella <= 144000) {
+     number2.innerHTML = "<p>Para compensar tu huella, te invitamos a sembrar mínimo <h2>6</h2> árboles al año.</p><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><i class='fas fa-tree-alt'></i><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>" 
+   }
+ }
+  else {
+     number2.innerHTML = "<p>Para compensar tu huella, te invitamos a repoblar de árboles el mundo.</p><i class='fas fa-tree-alt'></i><p id='share'>Comparte esta información con tus conocidos o amigos para que ellos también tomen conciencia.</p><br>" 
    }
 
-   if (++x === ticks) {
+ if (++x === ticks) {
       window.clearInterval(interval);
    }
 
